@@ -9,7 +9,10 @@ class CheesesController < ApplicationController
   # GET /cheeses/:id
   def show
     cheese = Cheese.find_by(id: params[:id])
+    if cheese
+      render json: cheese
+    else
     render json: cheese
   end
-
+end
 end
